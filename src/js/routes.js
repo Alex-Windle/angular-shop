@@ -8,6 +8,16 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
     .state('root.home', {
       url: '/home',
       templateUrl: 'templates/home.tpl.html'
+    })
+    .state('root.register', {
+      url: '/register',
+      templateUrl: 'templates/register.tpl.html',
+      controller: 'RegisterController as register'
+    })
+    .state('root.login', {
+      url: '/login',
+      templateUrl: 'templates/login.tpl.html',
+      controller: 'LoginController as login'
     });
 
   $urlRouterProvider.otherwise('/home');

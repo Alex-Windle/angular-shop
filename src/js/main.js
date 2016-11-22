@@ -5,10 +5,10 @@ import 'angular-cookies';
 import { routerConfig } from "./routes";
 
 import { LayoutController } from "./controllers/layout";
-
-console.log("This is not a promising beginning...");
+import { RegisterController } from "./controllers/register";
 
 angular
   .module('app', ['ui.router', 'ngCookies'])
   .config(routerConfig)
-  .controller('LayoutController', LayoutController);
+  .controller('LayoutController', LayoutController)
+  .controller('RegisterController', RegisterController);
