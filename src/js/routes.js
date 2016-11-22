@@ -18,6 +18,11 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
       url: '/login',
       templateUrl: 'templates/login.tpl.html',
       controller: 'LoginController as login'
+    })
+    .state('root.orders', {
+      url: '/orders',
+      templateUrl: 'templates/orders.tpl.html',
+      controller: 'OrdersController as orders'
     });
 
   $urlRouterProvider.otherwise('/home');
