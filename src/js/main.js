@@ -6,6 +6,7 @@ import { routerConfig } from "./routes";
 
 import { LayoutController } from "./controllers/layout";
 import { RegisterController } from "./controllers/register";
+import { LoginController } from "./controllers/login";
 
 import { UserService } from "./services/user";
 
@@ -14,4 +15,5 @@ angular
   .config(routerConfig)
   .controller('LayoutController', LayoutController)
   .controller('RegisterController', RegisterController)
+  .controller('LoginController', LoginController)
   .service('UserService', UserService);
