@@ -6,6 +6,7 @@ function UserService ($http, $cookies) {
   this.create = create;
   this.isLoggedIn = isLoggedIn;
   this.setUser = setUser;
+  this.logout = logout;
 
   function create (user) {
     return $http.post(`${SERVER}/users`, user);
@@ -17,6 +18,11 @@ function UserService ($http, $cookies) {
 
   function isLoggedIn () {
     return $cookies.get('username') ? true : false;
+  }
+
+  function logout () {
+    $cookies.remove('username');
+    $cookies.remove('access_token');
   }
 
   function setUser (data) {
