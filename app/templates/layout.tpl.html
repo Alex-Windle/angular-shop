@@ -5,9 +5,9 @@
     </div>
     <div class="nav-right nav-menu">
       <a class="nav-item" href="#/register"
-         ng-hide="layout.loggedIn">Sign Up</a>
+         ng-show="!layout.loggedIn">Sign Up</a>
       <a class="nav-item" href="#/login"
-         ng-hide="layout.loggedIn">Login</a>
+         ng-show="!layout.loggedIn">Login</a>
       <a class="nav-item" href="#/"
          ng-show="layout.loggedIn"
          ng-click="layout.logout()">Logout</a>
