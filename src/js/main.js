@@ -6,7 +6,7 @@ import { routerConfig } from "./routes";
 
 import { LayoutController } from "./controllers/layout";
 
-console.log("You're not crazy.");
+console.log("This is not a promising beginning...");
 
 angular
   .module('app', ['ui.router', 'ngCookies'])
