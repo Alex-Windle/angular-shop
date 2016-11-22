@@ -1,4 +1,4 @@
-function LoginController (UserService, $cookies, $state) {
+function LoginController (UserService, $state, $rootScope) {
   let vm = this;
 
   vm.activate = activate;
@@ -6,9 +6,8 @@ function LoginController (UserService, $cookies, $state) {
   function activate (user) {
     UserService.login(user).then(
       resp => {
-        let data = resp.data;
-        $cookies.put('username', data.username);
-        $cookies.put('access_token', data.access_token);
+        UserService.setUser(resp.data);
+        $rootScope.$broadcast('loginChange', {});
         $state.go('root.home');
       },
       errors => {
@@ -19,5 +18,5 @@ function LoginController (UserService, $cookies, $state) {
 
 };
 
-LoginController.$inject = ['UserService', '$cookies', '$state'];
+LoginController.$inject = ['UserService', '$state', '$rootScope'];
 export { LoginController };
