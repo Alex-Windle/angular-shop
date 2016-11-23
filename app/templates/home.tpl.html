@@ -1,1 +1,24 @@
-<h1 class="title"> Home Page </h1>
+<h2 class="title">Buy More Stuff!</h2>
+
+<ul class="products">
+  <li class="product-card" ng-repeat="product in products.products">
+    <div class="card-image">
+      <figure class="image">
+        <img ng-src="{{ product.image_url }}" />
+      </figure>
+    </div>
+    <div class="card-content">
+      <div class="media-content">
+        <p class="title">
+          {{ product.title }} - ({{ product.category }})
+        </p>
+        <p class="title">
+          ${{ product.price }}
+        </p>
+      </div>
+      <div class="content">
+        {{ product.description }}
+      </div>
+    </div>
+  </li>
+</ul>

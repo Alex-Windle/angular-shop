@@ -1,6 +1,4 @@
-const SERVER = 'https://hidden-wildwood-99939.herokuapp.com';
-
-function UserService ($http, $cookies) {
+function UserService ($http, $cookies, SERVER) {
 
   this.login = login;
   this.create = create;
@@ -32,5 +30,5 @@ function UserService ($http, $cookies) {
 
 };
 
-UserService.$inject = ['$http', '$cookies'];
+UserService.$inject = ['$http', '$cookies', 'SERVER'];
 export { UserService };
