@@ -1,0 +1,25 @@
+<h3 class="title">Add a Product</h3>
+
+<form name="product-form" ng-submit="products.add(product)">
+  <p class="control">
+    <input name="title" type="text" placeholder="Item Title"
+           ng-model="product.title" required />
+  </p>
+  <p class="control">
+    <input name="category" type="text" placeholder="Category"
+           ng-model="product.category" required />
+  </p>
+  <p class="control">
+    <input name="description" type="text" placeholder="Item Description"
+           ng-model="product.description" required />
+  </p>
+  <p class="control">
+    <input name="image" type="text" placeholder="Image"
+           ng-model="product.image_url" required />
+  </p>
+  <p class="control">
+    <input name="price" type="number" placeholder="Item Price"
+           ng-model="product.price" step="0.01" required />
+  </p>
+  <button>Submit</button>
+</form>

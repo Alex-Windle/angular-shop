@@ -1,9 +1,16 @@
-function ProductsController (ProductService) {
+function ProductsController (ProductService, $state) {
   console.log("Hello from app.products!");
 
   let vm = this;
 
   vm.products = [];
+  vm.add = add;
+
+  function add (product) {
+    ProductService.addProduct(product).then((resp) => {
+      $state.go('root.home');
+    });
+  }
 
   function init () {
     ProductService.allProducts().then((resp) => {
@@ -14,5 +21,5 @@ function ProductsController (ProductService) {
   init();
 };
 
-ProductsController.$inject = ['ProductService'];
+ProductsController.$inject = ['ProductService', '$state'];
 export { ProductsController };

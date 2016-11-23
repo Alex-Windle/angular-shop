@@ -24,6 +24,11 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
       url: '/orders',
       templateUrl: 'templates/orders.tpl.html',
       controller: 'OrdersController as orders'
+    })
+    .state('root.addProduct', {
+      url: '/add-product',
+      templateUrl: 'templates/add-product.tpl.html',
+      controller: 'ProductsController as products'
     });
 
   $urlRouterProvider.otherwise('/home');
