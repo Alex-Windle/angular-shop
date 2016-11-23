@@ -3,6 +3,7 @@ function UserService ($http, $cookies, SERVER) {
   this.login = login;
   this.create = create;
   this.isLoggedIn = isLoggedIn;
+  this.isAdmin = isAdmin;
   this.setUser = setUser;
   this.logout = logout;
   this.getHeaders = getHeaders;
@@ -19,6 +20,10 @@ function UserService ($http, $cookies, SERVER) {
     return $cookies.get('username') ? true : false;
   }
 
+  function isAdmin () {
+    return $cookies.get('admin');
+  }
+
   function logout () {
     $cookies.remove('username');
     $cookies.remove('access_token');
@@ -27,6 +32,7 @@ function UserService ($http, $cookies, SERVER) {
   function setUser (data) {
     $cookies.put('username', data.username);
     $cookies.put('access_token', data.access_token);
+    $cookies.put('admin', data.admin);
   }
 
   function getHeaders () {
