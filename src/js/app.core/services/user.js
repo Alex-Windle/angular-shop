@@ -21,7 +21,7 @@ function UserService ($http, $cookies, SERVER) {
   }
 
   function isAdmin () {
-    return $cookies.get('admin');
+    return $cookies.get('admin') === 'true';
   }
 
   function logout () {
