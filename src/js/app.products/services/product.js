@@ -1,4 +1,4 @@
-function ProductService ($http, SERVER) {
+function ProductService ($http, SERVER, UserService) {
 
   this.allProducts = allProducts;
   this.addProduct = addProduct;
@@ -7,11 +7,18 @@ function ProductService ($http, SERVER) {
     return $http.get(`${SERVER}/products`);
   }
 
-  function addProduct () {
-    console.log("TODO: write this code");
+  function addProduct (product) {
+    let req = {
+      url: `${SERVER}/products`,
+      data: product,
+      method: 'POST',
+      headers: UserService.getHeaders()
+    };
+
+    return $http(req);
   }
 
 };
 
-ProductService.$inject = ['$http', 'SERVER'];
+ProductService.$inject = ['$http', 'SERVER', 'UserService'];
 export { ProductService };

@@ -5,6 +5,7 @@ function UserService ($http, $cookies, SERVER) {
   this.isLoggedIn = isLoggedIn;
   this.setUser = setUser;
   this.logout = logout;
+  this.getHeaders = getHeaders;
 
   function create (user) {
     return $http.post(`${SERVER}/users`, user);
@@ -26,6 +27,13 @@ function UserService ($http, $cookies, SERVER) {
   function setUser (data) {
     $cookies.put('username', data.username);
     $cookies.put('access_token', data.access_token);
+  }
+
+  function getHeaders () {
+    let token = $cookies.get('access_token');
+    return {
+      Authorization: `Bearer ${token}`
+    };
   }
 
 };
