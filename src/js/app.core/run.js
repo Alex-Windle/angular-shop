@@ -6,13 +6,14 @@ function run ($rootScope, $state, UserService) {
       event.preventDefault();
       $state.go('root.login');
     }
+
   });
 
   function invalidRoute (toState) {
     let loggedIn = UserService.isLoggedIn();
     let safeRoutes = ['root.home', 'root.login', 'root.register'];
 
-    return !loggedIn && !safeRoutes.includes(toState.name);
+    return !(loggedIn || safeRoutes.includes(toState.name));
   };
 
 };
