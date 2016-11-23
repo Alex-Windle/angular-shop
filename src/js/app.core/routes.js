@@ -7,7 +7,8 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
     })
     .state('root.home', {
       url: '/home',
-      templateUrl: 'templates/home.tpl.html'
+      templateUrl: 'templates/home.tpl.html',
+      controller: 'ProductsController as products'
     })
     .state('root.register', {
       url: '/register',
